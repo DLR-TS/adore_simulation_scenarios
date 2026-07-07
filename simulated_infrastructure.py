@@ -34,6 +34,7 @@ def create_simulated_infrastructure(
     infrastructure_position_utm: Tuple[float, float, int, str, float],
     polygon_utm: list[Tuple[float, float, int, str, float]],
     map_file: str = "de_bs_borders_wfs.r2sr",
+    namespace: str = "infrastructure",
 ) -> List[Action]:
 
     validity_polygon_in_utm = []
@@ -50,7 +51,7 @@ def create_simulated_infrastructure(
     return [
         Node(
             package='decision_maker_infrastructure',
-            namespace='infrastructure',
+            namespace=namespace,
             executable='decision_maker_infrastructure',
             name='decision_maker_infrastructure',
             parameters=[
