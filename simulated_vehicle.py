@@ -64,7 +64,8 @@ def create_simulated_vehicle(
     #vehicle_parameters_file: str = "obstacle.json",
     map_file: str = "de_bs_borders_wfs.r2sr",
     #map_file: str = "r2s_flightfield_edemissen_26022026_25832.r2sr",
-    controllable: bool = True
+    controllable: bool = True,
+    sensor_range: float = 1000.0,
 ) -> List[Action]:
 
     """Create standalone ROS 2 nodes for the simulated vehicle stack."""
@@ -121,6 +122,7 @@ def create_simulated_vehicle(
                 {"vehicle_id": vehicle_id},
                 {"v2x_id": v2x_id},
                 {"controllable": controllable},
+                {"sensor_range": sensor_range},
                 {"vehicle_model_file": vehicle_parameters_folder + "/" + vehicle_parameters_file},
             ],
         ),
