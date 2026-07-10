@@ -127,12 +127,12 @@ def create_simulated_vehicle(
             ],
         ),
         Node(
-            package="operational_design_domain",
-            executable="operational_design_domain",
-            name="operational_design_domain",
+            package="odd_monitor",
+            executable="odd_monitor",
+            name="odd_monitor",
             namespace=namespace,
             parameters=[
-                {"openodd_file": odd_folder + "/" + "simulation_odd.json" },
+                {"openodd_file": odd_folder + "/" + "simulation_odd.yaml" },
             ],
         ),
         Node(
