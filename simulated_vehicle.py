@@ -132,6 +132,7 @@ def create_simulated_vehicle(
             name="odd_monitor",
             namespace=namespace,
             parameters=[
+                {"vehicle_id": v2x_id },
                 {"openodd_file": odd_folder + "/" + "simulation_odd.yaml" },
             ],
         ),
