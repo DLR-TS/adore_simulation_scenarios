@@ -32,27 +32,6 @@ def generate_launch_description():
             goals=goal_positions,
             vehicle_id=111,
             v2x_id=0,
-            controllable=False
-        ),
-        # Simulated Traffic Signal Node
-        # To turn green, publish to topic /user_input - "turn red to green"
-        # To turn red, publish to topic /user_input - "turn green to red"
-        # Alternatively, instant changes to each color can be done by publishing to topic /user_input - eg: "turn green" 
-        Node(
-            package='simulated_traffic_signal',
-            namespace="ego_vehicle",
-            executable='simulated_traffic_signal',
-            name='traffic_lights',
-            parameters=[
-                {"permanent_red": True},
-                {"traffic_lights": ["t1"]},
-                {"t1.x": 606562.275205165},
-                {"t1.y": 5797309.242937037},
-                {"t1.red_duration": 10.0},
-                {"t1.yellow_duration": 3.0},
-                {"t1.red_yellow_duration": 1.0},
-                {"t1.green_duration": 10.0}
-            ]
         ),
         *create_visualizer(
             whitelist=["ego_vehicle"],
